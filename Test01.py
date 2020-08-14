@@ -122,6 +122,7 @@ print("75% Done.")
 print("")
 sleep (2.5)
 print("100 % Done.")
+sleep(1.5)
 print("")
 
 def ext ():
@@ -194,6 +195,7 @@ else:
   sleep(2.5)
   print("WIP part, searching ID will be working soon. :3")
   print("")
+
 
  #the list ID is from 3 to 5 numbers long
  #input writes a number 3 - 5 otherwhise "ID not found!"
