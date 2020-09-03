@@ -2,6 +2,7 @@ from time import *
 import pyinputplus as pip
 import os
 import sys
+import random
 
 def HelloWorld ():
  sleep(2.5)
@@ -125,19 +126,21 @@ print("100 % Done.")
 sleep(1.5)
 print("")
 
+
+
 def ext ():
  sys.exit()
 
 def cls ():
  os.system("cls")
 
-print("To anytime hide your fingerprints, type: 0 ")
-
-if rspNm or rspPssw == "0":
+#if rspNm or rspPssw == "0":
+if rspNm  == "0":
  cls()
  ext()
     
-if rspNm != "AMCCS" or rspPssw != "AdaSuperComputer" or ext or cls == "0" :
+if rspNm != "AMCCS" or rspPssw != "123": #rspPssw != "AdaSuperComputer":
+
 
  sleep (3.5)
  print ("Identification failed.")  
@@ -178,8 +181,7 @@ if rspNm != "AMCCS" or rspPssw != "AdaSuperComputer" or ext or cls == "0" :
  print("Shutdown system required.")
  print("")
 #Os.system("clear") clears the terminal
- os.system("cls")
- sys.exit()
+ cls()
  
 else:
   sleep (3.5)
@@ -187,6 +189,7 @@ else:
   sleep(4)
   print("")
   for List in [[a*b for b in range(-101, 101)] for a in range(-101, 101)]: print(List) 
+  print("")
   print ("The code has been opened.")
   print("")
   sleep(2.5)
@@ -198,16 +201,54 @@ else:
 
 
  #the list ID is from 3 to 5 numbers long
- #input writes a number 3 - 5 otherwhise "ID not found!"
- #Terminal asks input to know the ID's info
- #Input takes a string of a yes or a no
+
+  def printPromptID():
+    Prompt = pip.inputNum(prompt = "Enter ID: ")
+    print("")
+RspID = "12345"
+
+printPromptID()
+  
+if len(RspID) < 1 or len(RspID) > 5:
+    print("ID not Found!")
+    print("")
+    print("Try with another ID.")
+    print("")
+    printPromptID()
+    
+else: 
+    print("Do You want to know the typed ID?")
+    print("")
+    print("If yes, type y. If no, type n.")
+    RspAnswer1 = pip.inputStr(prompt = "Enter answer: ")
+
+    RndmIP = ".".join(str(random.randint(0,255)for i in range(4)))
+#RndmNm ==
+#RndmSrnm ==
+#RndmCntnt ==
+#RndmCntry ==
+#RndmAge ==
+#RndmFd ==
+if RspAnswer1 == "n":
+ RndmKll = (str(random.uniform(0.0,100.0)))
+ print("")
+ print("The chosen ID has a " + RndmKll + "% of killing sucess.")
+ print("")
+ 
+if RspAnswer1 == "y":
+ RndmAge = (str(random.randint(20,70)))
+ print ("")
+ print("The chosen ID is " + RndmAge + " years old.")
+ print("")
+ 
+ ##IP is like Generator and not as IP.
+ print ("The chosen ID has " + RndmIP + " as IP.")
+ print("")
+
  #Input gets yes shows: IP, name, surname, continent, country, age, and what food he/she just ate randomly
- #input get no then shows the % of kill chance of the ID randpmly
- #Terminal asks input of wanna kill ID
+ #Terminal asks input if wanna kill ID
  #Terminal takes a string of yes or no
- #If yes the launches an IMCBM and sends a report to Putin
+ #If yes the launches an ICBM and sends a report to Putin
  #If no then asks for next ID
  #When ID got killed then terminal asks if clear and quit program
  #Whenever input gets the chance to type then input can terminate and erase the whole programs as an emergency button
- 
- 
