@@ -190,7 +190,7 @@ else:
   print("")
   for List in [[a*b for b in range(-101, 101)] for a in range(-101, 101)]: print(List) 
   print("")
-  print ("The code has been opened.")
+  print ("The code has succesfully open.")
   print("")
   sleep(2.5)
   print("Check for the personal ID you are looking for.")
@@ -216,13 +216,14 @@ if len(RspID) < 1 or len(RspID) > 5:
     print("")
     printPromptID()
     
-else: 
+else:
     print("Do You want to know the typed ID?")
     print("")
+    sleep(1.5)
     print("If yes, type y. If no, type n.")
     RspAnswer1 = pip.inputStr(prompt = "Enter answer: ")
 
-    RndmIP = ".".join(str(random.randint(0,255)for i in range(4)))
+    RndmIP = ".".join(map(str,(random.randint(0,255)for i in range(4))))
 #RndmNm ==
 #RndmSrnm ==
 #RndmCntnt ==
@@ -232,17 +233,18 @@ else:
 if RspAnswer1 == "n":
  RndmKll = (str(random.uniform(0.0,100.0)))
  print("")
+ sleep(1)
  print("The chosen ID has a " + RndmKll + "% of killing sucess.")
  print("")
  
 if RspAnswer1 == "y":
  RndmAge = (str(random.randint(20,70)))
  print ("")
+ sleep(1)
  print("The chosen ID is " + RndmAge + " years old.")
  print("")
  
- ##IP is like Generator and not as IP.
- print ("The chosen ID has " + RndmIP + " as IP.")
+ print ("The chosen ID has " + RndmIP + " as an IP.")
  print("")
 
  #Input gets yes shows: IP, name, surname, continent, country, age, and what food he/she just ate randomly
