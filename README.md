@@ -10,8 +10,8 @@ This project contains:
 1. A .py file (the program itself)
 2. A .txt file (The synthesized voice where, later on it, reads out loud the name of the program)
 3. A .txt file (The synthesized voice where, it later on, reads out loud the percentage from 1 to 99 (x5)
-4. A .txt file with all the information (ReadME)
-5. A .txt file with all the requirements needed, to use the code itself
+4. A .txt file with all the requirements needed, to use the code itself
+5. A .md file with all the information (ReadME)
 6. To get the requirements You can choose either **METHOD A** or **METHOD B**
 7. A .mp3 file with the saved synthesized voice (Name of Program)
 8. A .mp3 file with the saved synthesized voice (Percerntage)
