@@ -4,7 +4,6 @@ import os
 import sys
 import random
 import names
-#from faker import Faker
 from tqdm import tqdm
 from tqdm.auto import tqdm
 from gtts import gTTS
@@ -54,7 +53,7 @@ elif Answ == "n":
  output.save("SystemName01.mp3")
  fh.close()
  os.system("start SystemName01.mp3")
- sleep(4.05)
+ sleep(4.1)
  os.system("taskkill /IM Music.UI.exe /F")
 
 
@@ -108,9 +107,6 @@ LogInInfo()
 
 rspNm = pip.inputStr(prompt="Enter ID Name: ")
 rspPssw = pip.inputPassword(prompt="Enter ID Password: ")
-
-#cls = os.system
-#ext = sys.exit
 
 
 def IDVerify ():        
@@ -186,7 +182,6 @@ if rspNm != "Name" or rspPssw != "Password":
   print("")
   print("Shutdown system required!")
   print("")
-#Os.system("clear") clears the terminal
   cls()
  
 else:
@@ -202,9 +197,6 @@ else:
   print("Check for the personal ID Your are looking for!")
   print("")
   sleep(2.5)
-
-
- #the list ID is from 3 to 5 numbers long
 
 Prompt = pip.inputStr(prompt= "Enter ID: ")
 print("")
@@ -231,8 +223,6 @@ while True:
 
     RndmIP = ".".join(map(str,(random.randint(0,255)for i in range(4))))
     RndmFNm = names.get_full_name()
-    #fake = Faker()
-    #RndmAdrss = fake.address()
     RndmDrnkWtrH = random.randint(0,24)
     RndmDrnkWtrM = random.randint(0,60)
     RndmDrnkWtrS = random.randint(0,60)
@@ -246,8 +236,9 @@ def AnswChk1 ():
   print("The chosen ID has a " + RndmKll + "% of killing sucess!")
   print("")
  
- if RspAnswer1 == "y":
+ elif RspAnswer1 == "y":
   RndmAge = (str(random.randint(20,70)))
+  RndmKll = (str(random.uniform(0.0,100.0)))
   print ("")
   sleep(1)
   print("The chosen ID has " + RndmFNm + " as name.")
@@ -258,12 +249,14 @@ def AnswChk1 ():
   print ("The chosen ID has " + RndmIP + " as an IP.")
   print("")
   sleep(1)
-  #print("The chosen ID lives at " + RndmAdrss + " right now.")
   print("")
   sleep (1)
   print("The chosen ID drank water at " + str(RndmDrnkWtrH) + ":" + str(RndmDrnkWtrM) + ":" + str(RndmDrnkWtrS) + " last time.")
   print("")
   sleep(1)
+  print("The chosen ID has a " + RndmKll + "% of killing sucess!")
+  sleep(1)
+  print("")
 
 AnswChk1()
 
@@ -332,7 +325,7 @@ os.system("start PercentageT2S-01.mp3")
 
 sleep(6)
 print("")
-sleep(124.05)
+sleep(118.05)
 os.system("@echo off")
 os.system("@taskkill /IM Music.UI.exe /F")
 print("Waiting...")
