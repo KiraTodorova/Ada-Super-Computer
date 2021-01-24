@@ -4,7 +4,7 @@ import os
 import sys
 import random
 import names
-from faker import Faker
+#from faker import Faker
 from tqdm import tqdm
 from tqdm.auto import tqdm
 from gtts import gTTS
@@ -37,21 +37,10 @@ elif Answ == "help":
  print("")
  DEVCmnd = pip.inputStr(prompt = "Enter DEV Command: ")
  
- if DEVCmnd == "r00t_get-info Nm && Pssw get-r00t":
-  DEVCmnd = pip.inputStr(prompt = "Enter DEV Command: ") 
+ if DEVCmnd == "r00t_get-info Nm && Pssw get-r00t": 
   print("Log in info: You have "  + Nm + " as ID Name" + Pssw + " as ID Password")
  
 elif Answ == "n":
- 
- 
-#1 The program asks if user wants to give an dev command
-#2 The user types y or no. If y see below if no, program starts 
-#3.1 The program prints "to get help, type it". And user does so. A printed command shows up-
-#3.2 The user types the actual dev command and UsrNme and Psswd shows up.
-
-
-
-
 
  print("")
  print("ATTENTION! BE AWARE OF HIGH VOLUME! LOWER VOLUME AT FIRST AND THEN RAISE AS PLEASED!")
@@ -65,7 +54,7 @@ elif Answ == "n":
  output.save("SystemName01.mp3")
  fh.close()
  os.system("start SystemName01.mp3")
- sleep(2.5)
+ sleep(4.05)
  os.system("taskkill /IM Music.UI.exe /F")
 
 
@@ -232,7 +221,6 @@ while True:
     print("Try with another ID!")
     print("")
     print(Prompt)
-    break
     
  else:
     print("Do You want to know the typed ID?")
@@ -243,12 +231,12 @@ while True:
 
     RndmIP = ".".join(map(str,(random.randint(0,255)for i in range(4))))
     RndmFNm = names.get_full_name()
-    fake = Faker()
-    RndmAdrss = fake.address()
+    #fake = Faker()
+    #RndmAdrss = fake.address()
     RndmDrnkWtrH = random.randint(0,24)
     RndmDrnkWtrM = random.randint(0,60)
     RndmDrnkWtrS = random.randint(0,60)
-
+    break
 
 def AnswChk1 ():
  if RspAnswer1 == "n":
@@ -270,14 +258,12 @@ def AnswChk1 ():
   print ("The chosen ID has " + RndmIP + " as an IP.")
   print("")
   sleep(1)
-  print("The chosen ID lives at " + RndmAdrss + " right now.")
+  #print("The chosen ID lives at " + RndmAdrss + " right now.")
   print("")
   sleep (1)
   print("The chosen ID drank water at " + str(RndmDrnkWtrH) + ":" + str(RndmDrnkWtrM) + ":" + str(RndmDrnkWtrS) + " last time.")
   print("")
   sleep(1)
-
-PromptChck()
 
 AnswChk1()
 
@@ -296,7 +282,7 @@ def AnswChk2 ():
  if RspAnswer2 == "y":
   print("")
   sleep(2)  
-  print("AN ICBM misile will be sent soon to the chosen ID!")
+  print("An ICBM misile will be sent soon to the chosen ID!")
   print("")
   sleep(1)
   print("**Starting Sounds of Nuclear Alarm.**")
@@ -346,7 +332,7 @@ os.system("start PercentageT2S-01.mp3")
 
 sleep(6)
 print("")
-sleep(121.2)
+sleep(124.05)
 os.system("@echo off")
 os.system("@taskkill /IM Music.UI.exe /F")
 print("Waiting...")
