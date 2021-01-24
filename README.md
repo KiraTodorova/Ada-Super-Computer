@@ -1,4 +1,4 @@
-# ImForceToDoThis
+# ImForcedToDoThis
 I'm forced to do this
 
 This is an open source Free program/script C:
@@ -11,8 +11,21 @@ This project contains:
 2. A .txt file (The synthesized voice where, later on it, reads out loud the name of the program)
 3. A .txt file (The synthesized voice where, it later on, reads out loud the percentage from 1 to 99 (x5)
 4. A .txt file with all the information (ReadME)
-5. A .mp3 file with the saved synthesized voice (Name of Program)
-6. A .mp3 file with the saved synthesized voice (Percerntage)
+5. A .txt file with all the requirements needed, to use the code itself
+6. To get the requirements You can choose either **METHOD A** or **METHOD B**
+7. A .mp3 file with the saved synthesized voice (Name of Program)
+8. A .mp3 file with the saved synthesized voice (Percerntage)
+
+**METHOD A**
+1. Open a Terminal
+2. Use command: pip install "NAME OF MODULE"
+Check "requirements.txt" for the listed required Modules.
+To install the required module, write one at a time!.
+
+**METHOD B** 
+1. Open a Terminal
+2. Use command: pip install -r requirements.txt
+To install all the requirements at the same time.
 
 Just click on the .exe file and enjoy! C:
 

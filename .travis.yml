@@ -2,4 +2,4 @@ language: python
 python:
 - "3.8.5"
 script: 
-- python Test01.py
+- python AdaSuperComputer_DEFAULT_01.py
