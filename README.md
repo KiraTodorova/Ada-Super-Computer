@@ -14,7 +14,7 @@ This project contains:
 5. A .md file with all the information (ReadME)
 6. To get the requirements You can choose either **METHOD A** or **METHOD B**
 7. A .mp3 file with the saved synthesized voice (Name of Program)
-8. A .mp3 file with the saved synthesized voice (Percerntage)
+8. A .mp3 file with the saved synthesized voice (Percentage)
 
 **METHOD A**
 1. Open a Terminal
