@@ -414,5 +414,7 @@ loop.close()
 
 ReprtPrMnstr()
 
+sleep(1)
 print("Report sent!")
+sleep(3)
 print("")
