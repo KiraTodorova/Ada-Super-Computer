@@ -37,7 +37,7 @@ elif Answ == "help":
  DEVCmnd = pip.inputStr(prompt = "Enter DEV Command: ")
  
  if DEVCmnd == "r00t_get-info Nm && Pssw get-r00t": 
-  print("Log in info: You have "  + Nm + " as ID Name" + Pssw + " as ID Password")
+  print("Log in info: You have "  + Nm + " as ID Name. " + Pssw + " as ID Password")
  
 elif Answ == "n":
 
@@ -110,20 +110,24 @@ rspPssw = pip.inputPassword(prompt="Enter ID Password: ")
 
 
 def IDVerify ():        
+ sleep(3)
  print("")
  print ("ID is being verified!")
  print("")
  sleep (2.5)
- print("25% Done.")
+ print("25%")
  print("")
  sleep (2.5)
- print("50% Done.")
+ print("50%")
  print("")
  sleep (2.5)
- print("75% Done.")
+ print("75%")
  print("")
  sleep (2.5)
- print("100% Done.")
+ print("100%")
+ print("")
+ sleep(1)
+ print("Done.")
  sleep(1.5)
  print("")
 
@@ -141,7 +145,7 @@ if rspNm  == "0":
   cls()
   ext()
     
-if rspNm != "Name" or rspPssw != "Password":
+elif rspNm != "Name" or rspPssw != "Password":
 
 
   sleep (3.5)
@@ -189,7 +193,21 @@ else:
   print ("Identification succeeded!")
   sleep(4)
   print("")
+  sleep(2)
+  print("Loading avaliable IDs!")
+  print("")
+  sleep(2)
+  
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+   loop.set_description("Showing avaliable IDs".format(k))
+   loop.update(1)
+  loop.close()
+  print("")
+  sleep(1)
+  
   for List in [[a*b for b in range(-101, 101)] for a in range(-101, 101)]: print(List) 
+  sleep(2)
   print("")
   print ("The code has succesfully opened!")
   print("")
@@ -263,15 +281,12 @@ AnswChk1()
 
 
 def AnswChk2 ():
+ sleep(2)
  print("Do You want to kill the chosen ID?")
  print("")
  sleep(1.5)
  print("If yes, type y. If no, type n.")
  RspAnswer2 = pip.inputStr(prompt = "Enter answer: ")
- if RspAnswer2 == "n":
-  print("The chosen ID will live for one more day!")
-  print("")
-
  if RspAnswer2 == "y":
   print("")
   sleep(2)  
@@ -299,14 +314,112 @@ def AnswChk2 ():
   sleep(2)
   print("Thrusts ignited at:")
   sleep(1)
+  
+  fh = open("Percentage01.txt", "r")
+  PrcntTxt = fh.read().replace("\n", " ")
+  language = 'en'
+  output = gTTS(text=PrcntTxt, lang=language, slow=False)
+  output.save("PercentageT2S-01.mp3")
+  fh.close()
+  os.system("start PercentageT2S-01.mp3")
+
+  sleep(6)
+  print("")
+  sleep(118.05)
+  os.system("@echo off")
+  os.system("@taskkill /IM Music.UI.exe /F")
+  print("Waiting...")
+  print("")
+  
+  for i, x in enumerate(list(range(1000001))):
+   print(i, end='\r')
 
 
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+   loop.set_description("Backtracking to last working system trail...".format(k))
+   loop.update(1)
+  loop.close()
+
+
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Preparing to fix...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Fixing startup...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Stabilazing startup...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Stabilazing...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Thrusts Ignite Process startup...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Igniting thrusts...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+  loop = tqdm(total = 100000, position = 0, leave = False)
+  for k in range(100000):
+    loop.set_description("Continuation of launch proceure...".format(k))
+    loop.update(1)
+  loop.close()
+
+
+
+  print("ICBM launched!")
+  print("")
+  
+ elif RspAnswer2 == "n":
+  sleep(3)
+  print("")
+  print("The chosen ID will live for one more day!")
+  print("")
+
+
+
+  
 def ReprtPrMnstr ():
+ print("")
  print("A message will be compiled before sending it to the Primary Minister of Tolyavgrad Vyboska!")
- 
+ print("")
  print("Compiling message...")
  sleep(5)
- 
+ print("")
  print("Message compiled!")
  print("")
 
@@ -314,98 +427,9 @@ def ReprtPrMnstr ():
 AnswChk2()
 
 
-
-fh = open("Percentage01.txt", "r")
-PrcntTxt = fh.read().replace("\n", " ")
-language = 'en'
-output = gTTS(text=PrcntTxt, lang=language, slow=False)
-output.save("PercentageT2S-01.mp3")
-fh.close()
-os.system("start PercentageT2S-01.mp3")
-
-sleep(6)
+print("Preparing to send report...")
 print("")
-sleep(118.05)
-os.system("@echo off")
-os.system("@taskkill /IM Music.UI.exe /F")
-print("Waiting...")
-print("")
-
-for i, x in enumerate(list(range(1000001))):
-   print(i, end='\r')
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Backtracking to last working system trail...".format(k))
-    loop.update(1)
-loop.close()
-
-
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Preparing to fix...".format(k))
-    loop.update(1)
-loop.close()
-
-
-
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Fixing startup...".format(k))
-    loop.update(1)
-loop.close()
-
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Stabilazing startup...".format(k))
-    loop.update(1)
-loop.close()
-
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Stabilazing...".format(k))
-    loop.update(1)
-loop.close()
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Thrusts Ignite Process startup...".format(k))
-    loop.update(1)
-loop.close()
-
-
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Igniting thrusts...".format(k))
-    loop.update(1)
-loop.close()
-
-
-loop = tqdm(total = 100000, position = 0, leave = False)
-for k in range(100000):
-    loop.set_description("Continuation of launch proceure...".format(k))
-    loop.update(1)
-loop.close()
-
-
-
-print("ICBM launched!")
-print("")
-
-
-
+sleep(4)
 loop = tqdm(total = 100000, position = 0, leave = False)
 for k in range(100000):
     loop.set_description("Sending...".format(k))
