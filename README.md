@@ -35,7 +35,7 @@ A friend of mine tried to download it and his antivirus Norton flagged the file 
 
 This is the definition in quotes:
 
-"The reputation-based system uses "the wisdom of crowds" (Symantec’s tens of millions of end users) 
+"The reputation-based system uses "the wisdom of crowds" (Symantec’s tens of millions of end-users) 
 connected to cloud-based intelligence to compute a reputation score for an application, and in the 
 process identify malicious software in an entirely new way beyond traditional signatures and 
 behavior-based detection techniques."
@@ -43,7 +43,7 @@ behavior-based detection techniques."
 It's nothing to worry about! Python (.py) programming has sadly been flagged as a bad reputation program
 since people have been using this "easy" way of programming, to program viruses/malware/badware.
 
-This is the proof that my program is virus free:
+This is the proof that my program is virus-free:
 https://www.virustotal.com/gui/file/8ee0f075914560e7fb4d048791f431c379118967dcb79af834a0c87bf5a0cd00/detection
 
 Any question, email me at:
