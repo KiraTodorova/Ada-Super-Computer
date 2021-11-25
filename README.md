@@ -15,6 +15,11 @@ This project contains:
 6. To get the requirements You can choose either **METHOD A** or **METHOD B**
 7. A .mp3 file with the saved synthesized voice (Name of Program)
 8. A .mp3 file with the saved synthesized voice (Percentage)
+9. SoundFX
+10. Character project Logotype
+11. Assets where it stores most of the soundsFX and Music
+12. Updated the License
+13. 
 
 **METHOD A**
 1. Open a Terminal
