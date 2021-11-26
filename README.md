@@ -19,7 +19,6 @@ This project contains:
 10. Character project Logotype
 11. Assets where it stores most of the soundsFX and Music
 12. Updated the License
-13. 
 
 **METHOD A**
 1. Open a Terminal

@@ -7,7 +7,8 @@ import random
 import names
 import threading
 
-from time import *
+from timeit import default_timer as timer
+from time import sleep
 from tqdm import tqdm
 from tqdm.auto import tqdm
 from gtts import gTTS
@@ -27,7 +28,7 @@ AdaSCNm= """
 StopThdBl = False
 
 InfoStr = """
- ADA SUPERCOMPUTER v.0.1
+ ADA SUPERCOMPUTER v. 0.1
  
  This is a super secret system where Your safety and annonymity is two important factors in our business.
  
@@ -169,7 +170,6 @@ def SystemInfoVO():
   os.system("@taskkill /IM Music.UI.exe /F")
   break
 
-
 Thd1 = threading.Thread(target = SystemInfoVO)
 Thd2 = threading.Thread(target = SystemTypeWriteInfo1, args = [InfoStr])
 
@@ -200,6 +200,7 @@ def LogInInfo():
 LogInInfo ()
 
 rspNm = pip.inputStr(prompt="Enter ID Name: ")
+sleep(1)
 rspPssw = pip.inputPassword(prompt="Enter ID Password: ")
 
 def IDVerify():        
@@ -285,7 +286,7 @@ def LogInChck():
   sleep(4)
   print("")
   os.system("start .\\Assets\\3_ADA_VO_BootSuccesful01.wav")
-  sleep(7)
+  sleep(8)
   os.system("start .\\Assets\\2_ADA_VO_Welcome007_01.wav")
   sleep(7)
   os.system("@taskkill /IM Music.UI.exe /F")
@@ -327,7 +328,6 @@ def SecIDChck():
  Prompt = pip.inputStr(prompt= "Enter ID: ")
  print("")
  while True:
-
   if len(Prompt) < 1 or len(Prompt) > 5 and not NumLst[0] and not NumLst[1] and not NumLst[2]\
    and not NumLst[3] and not NumLst[4] and not NumLst[5] and not NumLst[6] and not NumLst[7]\
    and not NumLst[8] and not NumLst[9]:
@@ -384,21 +384,34 @@ def AnswChk1():
   print("The chosen ID has a " + RndmKll + "% of killing sucess!")
   sleep(1)
   print("")
+  
 
 AnswChk1()
 
+StopThdB2 = False
 
-
+def CinematicDramaticMusic():
+ while True:
+  if StopThdB2 == True:
+   break
+  sleep(175) 
+  os.system("start .\\Assets\\DramaticOrchestraLoopable01.wav")
+  sleep(358)
+  os.system("@taskkill /IM Music.UI.exe /F")
+  break
+ 
 def AnswChk2():
  while True:
-  sleep(2)
+  if StopThdB2 == True:
+   break
+  
+  sleep(4)
   print("Do You want to kill the chosen ID?")
   print("")
   sleep(1.5)
   print("If yes, type y. If no, type n.")
   print("")
   RspAnswer2 = pip.inputStr(prompt = "Enter answer: ")
-  #break
   
   if RspAnswer2 == "y":
    print("")
@@ -407,7 +420,7 @@ def AnswChk2():
    print("")
    sleep(1)
    os.system("start .\\Assets\\FactoryAlarm01.wav") 
-   sleep(3)
+   sleep(31)
    print("Engine of ICBM has started!")
    print("")
    sleep(2)
@@ -422,28 +435,28 @@ def AnswChk2():
    fh.close()
    os.system("start PercentageT2S-01.mp3")
    print("")
-   sleep(118.05)
+   sleep(130)
    os.system("start .\\Assets\\ICBMEngineSound01.wav") 
    sleep(7)
    os.system("@taskkill /IM Music.UI.exe /F")
+   print("")
    print("Waiting...")
    print("")
-   break
    
    for i, x in enumerate(list(range(1000001))):
     print(i, end='\r')
+   
+   loop = tqdm(total = 100000, position = 0, leave = False)
+   for k in range(100000):
+    loop.set_description("Backtracking to last working system trail...".format(k))
+    loop.update(1)
+   loop.close()
 
-    loop = tqdm(total = 100000, position = 0, leave = False)
-    for k in range(100000):
-     loop.set_description("Backtracking to last working system trail...".format(k))
-     loop.update(1)
-    loop.close()
-
-    loop = tqdm(total = 100000, position = 0, leave = False)
-    for k in range(100000):
-     loop.set_description("Preparing to fix...".format(k))
-     loop.update(1)
-    loop.close()
+   loop = tqdm(total = 100000, position = 0, leave = False)
+   for k in range(100000):
+    loop.set_description("Preparing to fix...".format(k))
+    loop.update(1)
+   loop.close()
 
    loop = tqdm(total = 100000, position = 0, leave = False)
    for k in range(100000):
@@ -483,11 +496,11 @@ def AnswChk2():
    
    print("ICBM launched!")
    print("")
-   sleep(20)
-   os.system("start .\\Assets\\BombExplosion01.wav") 
+   sleep(25)
+   os.system("start .\\Assets\\BombExplosion01.mp3") 
    sleep(7)
    os.system("@taskkill /IM Music.UI.exe /F")
-   break
+  
    
   elif RspAnswer2 == "n":
    sleep(3)
@@ -496,6 +509,7 @@ def AnswChk2():
    print("")
    SecIDChck()
    AnswChk1()
+  break
   
 def ReprtPrMnstr ():
  print("")
@@ -509,17 +523,26 @@ def ReprtPrMnstr ():
  os.system("@taskkill /IM Music.UI.exe /F")
  print("Message compiled!")
  print("")
+ 
+Thd3 = threading.Thread(target = CinematicDramaticMusic)
+Thd4 = threading.Thread(target = AnswChk2)
 
+Thd3.start()
+Thd4.start()
+StopThdB2 = True
 
-AnswChk2()
+Thd3.join()
+Thd4.join()
 
 def Report():
  print("Preparing to send report...")
  print("")
  os.system("start .\\Assets\\MachineFXPrintEDITED01.wav") 
  sleep(5)
+ print("")
  os.system("@taskkill /IM Music.UI.exe /F")
  sleep(4)
+ print("")
  loop = tqdm(total = 100000, position = 0, leave = False)
  for k in range(100000):
     loop.set_description("Sending...".format(k))
@@ -528,6 +551,7 @@ def Report():
 
 def ReportSub():
  sleep(1)
+ print("")
  print("Report sent!")
  sleep(3)
  print("")
