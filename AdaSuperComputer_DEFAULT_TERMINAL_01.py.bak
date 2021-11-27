@@ -7,6 +7,7 @@ import random
 import names
 import threading
 
+from timeit import default_timer as timer
 from time import sleep
 from tqdm import tqdm
 from tqdm.auto import tqdm
