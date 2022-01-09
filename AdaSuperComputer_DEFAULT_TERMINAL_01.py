@@ -243,8 +243,6 @@ rspPssw = pip.inputPassword(prompt="Enter ID Password: ")
 
 def IDVerify():        
  sleep(3)
- '''for i, x in enumerate(list(range(1000001))):
-  print(i, end='\r')'''
  
  loop = tqdm(total = 100000, position = 0, leave = False)
  for k in range(100000):
@@ -369,7 +367,6 @@ IDVerify()
 
 LogInChck()
 
-NumLst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 def SecIDChck():
  while True:
   try:
@@ -535,11 +532,6 @@ def AnswChk2():
    sleep(6)
    os.system("start .\\Assets\\BombExplosion01.mp3") 
    sleep(6)
-
-   '''StopThdB2 = True
-
-   Thd3.join()
-   Thd4.join()'''
    
   elif RspAnswer2 == "n":
    sleep(3)
