@@ -61,6 +61,11 @@ Pssw = "Password"
  
 def DevCmndAsk():
  sleep(3)
+ loop = tqdm(total = 10000, position = 0, leave = False)
+ for k in range(10000):
+  loop.set_description("Starting Up...".format(k))
+  loop.update(1)
+ loop.close()
  print(AdaSCNm)
  sleep(3)
  print("")
@@ -71,53 +76,88 @@ def DevCmndAsk():
  print("")
  sleep(2)
 
-def DevCmnd():
- ArlCmd = ["r00t_get-info Nm && Pssw get-r00t"]
- DEVCmnd = pip.inputStr(prompt = "Enter DEV Command: ")
- if DEVCmnd == ArlCmd [0]:
-  print("Log in info: You have "  + Nm + " as ID Name. " + Pssw + " as ID Password")
-  
- elif DEVCmnd != ArlCmd [0]:
-  Answ = pip.inputStr(prompt = "Enter y/help/n: ")
 
+def AnswCheckH():
+  DEVCmnd = "r00t_get-info Nm && Pssw get-r00t"
+  print("")
+  print(DEVCmnd + " is to get access info!")
+  print("")
+  DevCmnd()
+
+
+
+def AnswCheckN():
+ sleep(2)
+ print("")
+
+ loop = tqdm(total = 10000, position = 0, leave = False)
+ for k in range(10000):
+  loop.set_description("Loading ADA Super Computer Operative System...".format(k))
+  loop.update(1)
+ loop.close()
+ 
+ sleep(3)   
+ print("")
+ print("ATTENTION! BE AWARE OF HIGH VOLUME! LOWER VOLUME AT FIRST AND THEN RAISE AS PLEASED!")
+ sleep(5)
+ print("")
+
+ fh = open("SystemName01.txt", "r")
+ PrcntTxt = fh.read().replace("\n", " ")
+ language = 'en'
+ output = gTTS(text=PrcntTxt, lang=language, slow=False)
+ output.save("SystemName01.mp3")
+ fh.close()
+ os.system("start SystemName01.mp3")
+ sleep(4.5)
+
+def DevCmnd():
+ while True:
+  ArlCmd = ["r00t_get-info Nm && Pssw get-r00t"]
+  DEVCmnd = pip.inputStr(prompt = "Enter DEV Command: ")
+  if DEVCmnd == ArlCmd [0]:
+   print("Log in info: You have "  + Nm + " as ID Name. " + Pssw + " as ID Password")
+   print("")
+   break
+  
+  elif DEVCmnd != ArlCmd [0]:
+   AnswDEVCmnd = pip.inputStr(prompt = "Enter y/help/n: ")
+   
 DevCmndAsk()
 
 def LogInCredentials():
  while True:
   ArLsAns = ["y","help","n"]
-  Answ = pip.inputStr(prompt = "Enter y/help/n: ")
-  if Answ == ArLsAns [0]:
+  Answ2 = pip.inputStr(prompt = "Enter y/help/n: ")
+  if Answ2 == ArLsAns [0]:
    DevCmnd() 
    break
   
-  elif Answ ==  ArLsAns [1]:
-   DEVCmnd = "r00t_get-info Nm && Pssw get-r00t"
-   print("")
-   print(DEVCmnd + " is to get access info!")
-   print("")
-   DevCmnd()
+  elif Answ2 ==  ArLsAns [1]:
+   AnswCheckH()
    break
     
-  elif Answ == ArLsAns [2]:
-   sleep(3)  
-   print("")
-   print("ATTENTION! BE AWARE OF HIGH VOLUME! LOWER VOLUME AT FIRST AND THEN RAISE AS PLEASED!")
-   sleep(5)
-   print("")
-
-   fh = open("SystemName01.txt", "r")
-   PrcntTxt = fh.read().replace("\n", " ")
-   language = 'en'
-   output = gTTS(text=PrcntTxt, lang=language, slow=False)
-   output.save("SystemName01.mp3")
-   fh.close()
-   os.system("start SystemName01.mp3")
-   sleep(4.5)
-   os.system("taskkill /IM Music.UI.exe /F")
-   break 
+  elif Answ2 == ArLsAns [2]:
+   AnswCheckN()
+   break
    
-  elif Answ != ArLsAns [0] or ArLsAns [1] or ArLsAns [2]:
-   LogInCredentials()
+  elif Answ2 != ArLsAns [0] or Answ2 != ArLsAns [1] or Answ2 != ArLsAns [2]:
+   Answ = pip.inputStr(prompt = "Enter y/help/n: ")
+   
+   if Answ == ArLsAns [0]:
+    ArlCmd = ["r00t_get-info Nm && Pssw get-r00t"]
+    print(ArlCmd [0])
+    DevCmnd()
+    break
+    
+   elif Answ == ArLsAns [1]:
+    AnswCheckH()
+    break
+    
+   elif Answ == ArLsAns [2]:
+    AnswCheckN()
+    break
+    
 
 LogInCredentials()
 
@@ -140,25 +180,25 @@ def SystemTypeWriteInfo1(InfoStr):
 
 def FileStarterVOInfo():
  os.system("start .\\Assets\\5_ADA_VO_ImportantBusiness01.wav")
- sleep(13)
- os.system("start .\\Assets\\6_ADA_VO_Wokload01.wav")
- sleep(7)
- os.system("start .\\Assets\\7_ADA_VO_OtherSafety01.wav")
- sleep(8)
- os.system("start .\\Assets\\8_ADA_VO_NewRole01.wav")
- sleep(8)
- os.system("start .\\Assets\\9_ADA_VO_YouOweUs01.wav")
- sleep(13)
- os.system("start .\\Assets\\10_ADA_VO_Letter01.wav")
  sleep(14)
- os.system("start .\\Assets\\11_ADA_VO_DeathSentence01.wav")
- sleep(9)
- os.system("start .\\Assets\\12_ADA_VO_DirectOrders01.wav")
+ os.system("start .\\Assets\\6_ADA_VO_Wokload01.wav")
  sleep(8)
+ os.system("start .\\Assets\\7_ADA_VO_OtherSafety01.wav")
+ sleep(9)
+ os.system("start .\\Assets\\8_ADA_VO_NewRole01.wav")
+ sleep(9)
+ os.system("start .\\Assets\\9_ADA_VO_YouOweUs01.wav")
+ sleep(14)
+ os.system("start .\\Assets\\10_ADA_VO_Letter01.wav")
+ sleep(16)
+ os.system("start .\\Assets\\11_ADA_VO_DeathSentence01.wav")
+ sleep(10)
+ os.system("start .\\Assets\\12_ADA_VO_DirectOrders01.wav")
+ sleep(10)
  os.system("start .\\Assets\\13_ADA_VO_Warning01.wav")
- sleep(12)
+ sleep(13)
  os.system("start .\\Assets\\14_ADA_VO_WelcomeNewFamily01.wav")
- sleep(6)
+ sleep(7)
 
 def SystemInfoVO(): 
  while True:
@@ -166,7 +206,6 @@ def SystemInfoVO():
    break
   FileStarterVOInfo()
   sleep(5)
-  os.system("@taskkill /IM Music.UI.exe /F")
   break
 
 Thd1 = threading.Thread(target = SystemInfoVO)
@@ -196,7 +235,7 @@ def LogInInfo():
  os.system("@taskkill /IM Music.UI.exe /F")
  print("")
  
-LogInInfo ()
+LogInInfo()
 
 rspNm = pip.inputStr(prompt="Enter ID Name: ")
 sleep(1)
@@ -204,24 +243,36 @@ rspPssw = pip.inputPassword(prompt="Enter ID Password: ")
 
 def IDVerify():        
  sleep(3)
- print("")
- print ("ID is being verified!")
- print("")
- sleep (2.5)
- print("25%")
- print("")
- sleep (2.5)
- print("50%")
- print("")
- sleep (2.5)
- print("75%")
- print("")
- sleep (2.5)
- print("100%")
- print("")
- sleep(1)
- print("Done.")
- sleep(1.5)
+ '''for i, x in enumerate(list(range(1000001))):
+  print(i, end='\r')'''
+ 
+ loop = tqdm(total = 100000, position = 0, leave = False)
+ for k in range(100000):
+  loop.set_description("ID is being verified...".format(k))
+  loop.update(1)
+ loop.close()
+ 
+ loop = tqdm(total = 5000, position = 0, leave = False)
+ for k in range(5000):
+  loop.set_description("Checking all instances for malware...".format(k))
+  loop.update(1)
+ loop.close()
+  
+  
+ 
+ loop = tqdm(total = 10000, position = 0, leave = False)
+ for k in range(10000):
+  loop.set_description("Checking ID's references...".format(k))
+  loop.update(1)
+ loop.close()
+ 
+ loop = tqdm(total = 50000, position = 0, leave = False)
+ for k in range(50000):
+  loop.set_description("Checking ID's records...".format(k))
+  loop.update(1)
+ loop.close()
+ 
+ sleep(5.5)
  print("")
  
 def LogInChck():
@@ -232,7 +283,6 @@ def LogInChck():
     
  elif rspNm != Nm or rspPssw != Pssw:
   sleep (3.5)
-  print("")
   print ("Identification failed!")  
   print("") 
   sleep(1.5)
@@ -290,13 +340,10 @@ def LogInChck():
   sleep(7)
   os.system("@taskkill /IM Music.UI.exe /F")
   print("")
-  print("Loading avaliable IDs!")
-  print("")
-  sleep(2)
   
   loop = tqdm(total = 100000, position = 0, leave = False)
   for k in range(100000):
-   loop.set_description("Showing avaliable IDs:".format(k))
+   loop.set_description("Loading avaliable IDs:".format(k))
    loop.update(1)
   loop.close()
   print("")
@@ -308,7 +355,7 @@ def LogInChck():
   print ("The code has succesfully opened and a list of IDs are succesfully listed!")
   print("")
   sleep(2.5)
-  print("Please, select an ID from the list to get its status!")
+  print("Please, select an ID from the list to get its information!")
   print("")
   sleep(2.5)
 
@@ -324,24 +371,25 @@ LogInChck()
 
 NumLst = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 def SecIDChck():
- Prompt = pip.inputStr(prompt= "Enter ID: ")
- print("")
  while True:
-  if len(Prompt) < 1 or len(Prompt) > 5 and not NumLst[0] and not NumLst[1] and not NumLst[2]\
-   and not NumLst[3] and not NumLst[4] and not NumLst[5] and not NumLst[6] and not NumLst[7]\
-   and not NumLst[8] and not NumLst[9]:
-    print("ID not Found!")
-    print("")
-    print("Try with another ID!")
-    print("")
-    print(Prompt)
+  try:
+   
+   Prompt = input("Enter ID: ")
+   IntNumberInput = int(Prompt)
+   
+   if len(Prompt)  < 1 or len(Prompt) > 5 or any(not i.isdigit() for i in Prompt):
+    raise ValueError()
     
+  except ValueError:
+    print("No ID found in the system! Try again!")
+ 
   else:
-    print("Do You want to know the typed ID?")
-    print("")
-    sleep(1.5)
-    print("If yes, type y. If no, type n.")
-    break
+   print("")
+   print("Do You want to know the typed ID?")
+   print("")
+   sleep(1.5)
+   print("If yes, type y. If no, type n.")
+   break  
 
 SecIDChck()
 
@@ -374,9 +422,7 @@ def AnswChk1():
   sleep(1)
   print ("The chosen ID has " + RndmIP + " as an IP.")
   print("")
-  sleep(1)
-  print("")
-  sleep (1)
+  sleep(2)
   print("The chosen ID drank water at " + str(RndmDrnkWtrH) + ":" + str(RndmDrnkWtrM) + ":" + str(RndmDrnkWtrS) + " last time.")
   print("")
   sleep(1)
@@ -387,19 +433,18 @@ def AnswChk1():
 
 AnswChk1()
 
-StopThdB2 = False
-
 def CinematicDramaticMusic():
+ StopThdB2 = False
  while True:
   if StopThdB2 == True:
    break
-  sleep(175) 
+  sleep(215) 
   os.system("start .\\Assets\\DramaticOrchestraLoopable01.wav")
   sleep(358)
-  os.system("@taskkill /IM Music.UI.exe /F")
   break
  
 def AnswChk2():
+ StopThdB2 = False
  while True:
   if StopThdB2 == True:
    break
@@ -425,7 +470,7 @@ def AnswChk2():
    sleep(2)
    print("Thrusts ignited at:")
    sleep(1)
-  
+   
    fh = open("Percentage01.txt", "r")
    PrcntTxt = fh.read().replace("\n", " ")
    language = 'en'
@@ -434,26 +479,13 @@ def AnswChk2():
    fh.close()
    os.system("start PercentageT2S-01.mp3")
    print("")
-   sleep(130)
-   os.system("start .\\Assets\\ICBMEngineSound01.wav") 
-   sleep(7)
-   os.system("@taskkill /IM Music.UI.exe /F")
-   print("")
+   sleep(155)
    print("Waiting...")
    print("")
-   
-   for i, x in enumerate(list(range(1000001))):
-    print(i, end='\r')
-   
-   loop = tqdm(total = 100000, position = 0, leave = False)
-   for k in range(100000):
-    loop.set_description("Backtracking to last working system trail...".format(k))
-    loop.update(1)
-   loop.close()
 
    loop = tqdm(total = 100000, position = 0, leave = False)
    for k in range(100000):
-    loop.set_description("Preparing to fix...".format(k))
+    loop.set_description("Backtracking to last working system trail...".format(k))
     loop.update(1)
    loop.close()
 
@@ -492,14 +524,22 @@ def AnswChk2():
     loop.set_description("Continuation of launch proceure...".format(k))
     loop.update(1)
    loop.close()
-   
-   print("ICBM launched!")
-   print("")
-   sleep(25)
-   os.system("start .\\Assets\\BombExplosion01.mp3") 
+   sleep(2)
+   os.system("start .\\Assets\\ICBMEngineSound01.wav") 
    sleep(7)
    os.system("@taskkill /IM Music.UI.exe /F")
-  
+   
+   print("")
+   print("ICBM launched!")
+   print("")
+   sleep(6)
+   os.system("start .\\Assets\\BombExplosion01.mp3") 
+   sleep(6)
+
+   '''StopThdB2 = True
+
+   Thd3.join()
+   Thd4.join()'''
    
   elif RspAnswer2 == "n":
    sleep(3)
@@ -508,21 +548,14 @@ def AnswChk2():
    print("")
    SecIDChck()
    AnswChk1()
+   AnswChk2()
+    
+  elif RspAnswer2 != "y" or RspAnswer2 != "n":
+   print("Wrong answer. Try Again!")
+   print("")
+   sleep(1.5)
   break
-  
-def ReprtPrMnstr ():
- print("")
- print("A message will be compiled before sending it to the Primary Minister of Tolyavgrad Vyboska!")
- print("")
- print("Compiling message...")
- sleep(5)
- print("")
- os.system("start .\\Assets\\MachineStartup01.wav") 
- sleep(67)
- os.system("@taskkill /IM Music.UI.exe /F")
- print("Message compiled!")
- print("")
- 
+
 Thd3 = threading.Thread(target = CinematicDramaticMusic)
 Thd4 = threading.Thread(target = AnswChk2)
 
@@ -533,15 +566,27 @@ StopThdB2 = True
 Thd3.join()
 Thd4.join()
 
+def ReprtPrMnstr():
+ print("")
+ print("A message will be compiled before sending it to the Primary Minister of Tolyavgrad Vyboska!")
+ print("")
+ print("Compiling message...")
+ sleep(5)
+ print("")
+ os.system("start .\\Assets\\MachineStartup01.wav") 
+ sleep(67)
+ os.system("@taskkill /IM Music.UI.exe /F")
+ print("")
+ print("Message compiled!")
+ print("")
+
 def Report():
  print("Preparing to send report...")
- print("")
  os.system("start .\\Assets\\MachineFXPrintEDITED01.wav") 
  sleep(5)
  print("")
  os.system("@taskkill /IM Music.UI.exe /F")
  sleep(4)
- print("")
  loop = tqdm(total = 100000, position = 0, leave = False)
  for k in range(100000):
     loop.set_description("Sending...".format(k))
