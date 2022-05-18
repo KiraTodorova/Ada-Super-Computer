@@ -51,4 +51,4 @@ This is the proof that my program is virus-free:
 https://www.virustotal.com/gui/file/8ee0f075914560e7fb4d048791f431c379118967dcb79af834a0c87bf5a0cd00/detection
 
 Any question, email me at:
-<mauro.strandberg@gmail.com>
+<kira.todorova99@gmail.com>
